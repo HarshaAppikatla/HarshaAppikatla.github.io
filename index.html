@@ -1,62 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harsha Vardhan | Portfolio</title>\
+  <meta name="description"
+    content="Harsha Vardhan - Software Engineer Portfolio. Specialist in Java, Spring Boot, and Full Stack Development.">
+  <meta name="keywords" content="Harsha Vardhan, Software Engineer, Portfolio, Java Developer, Web Development">
+  <meta name="author" content="Harsha Vardhan">
+  <title>Harsha Vardhan | Software Engineer</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Icons (Optional, using text mainly but setup for future) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-  <!-- Header -->
+  <!-- Navigation -->
   <header>
-    <h1>Harsha Vardhan</h1>
-    <p>Aspiring Software Engineer</p>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Harsha<span class="accent-text">.dev</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Let's Talk</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- About Section -->
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a computer science student passionate about building
-      web applications and solving real-world problems using code.
-    </p>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="accent-text" style="font-weight: 600; margin-bottom: 10px;">HELLO, I'M</p>
+          <h1>Building Digital <br> <span class="gradient-text">Experiences.</span></h1>
+          <p>I am a computer science student passionate about building web applications and solving real-world problems
+            using code. Specializing in Java & Modern Web Tech.</p>
+          <div style="display: flex; gap: 15px;">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Resume</a>
+          </div>
+        </div>
+        <!-- Visual Decoration -->
+        <div class="hero-bg-glow"></div>
+      </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>HTML & CSS</li>
-      <li>Spring Boot</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Technical <span class="accent-text">Arsenal</span></h2>
+        <div class="skills-grid">
+          <div class="skill-item"><i class="fab fa-java fa-2x"
+              style="margin-bottom:10px; display:block; color:#f89820;"></i> Java</div>
+          <div class="skill-item"><i class="fas fa-leaf fa-2x"
+              style="margin-bottom:10px; display:block; color:#6db33f;"></i> Spring Boot</div>
+          <div class="skill-item"><i class="fab fa-js fa-2x"
+              style="margin-bottom:10px; display:block; color:#f7df1e;"></i> JavaScript</div>
+          <div class="skill-item"><i class="fab fa-html5 fa-2x"
+              style="margin-bottom:10px; display:block; color:#e34f26;"></i> HTML5 & CSS3</div>
+          <div class="skill-item"><i class="fab fa-git-alt fa-2x"
+              style="margin-bottom:10px; display:block; color:#f05032;"></i> Git & GitHub</div>
+          <div class="skill-item"><i class="fas fa-database fa-2x"
+              style="margin-bottom:10px; display:block; color:#00758f;"></i> SQL</div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section>
-    <h2>Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Featured <span class="accent-text">Projects</span></h2>
+        <div class="projects-grid">
 
-    <h3>AI-Powered Postal Grievance System</h3>
-    <p>
-      NLP-based system to classify and prioritize postal complaints.
-    </p>
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">AI-Powered Postal Grievance System</h3>
+              <p class="project-desc">A comprehensive NLP-based system designed to classify and prioritize postal
+                complaints automatically, improving response efficiency and user satisfaction.</p>
+              <div class="project-tags">
+                <span class="tag">Java</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Web App</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-text">View Source <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
 
-    <h3>Library Management System</h3>
-    <p>
-      Web-based system to manage books, users, and transactions.
-    </p>
-  </section>
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Library Management System</h3>
+              <p class="project-desc">A robust web-based solution to track books, manage user memberships, and handle
+                transaction histories seamlessly.</p>
+              <div class="project-tags">
+                <span class="tag">Web Development</span>
+                <span class="tag">Database</span>
+                <span class="tag">Management</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-text">View Source <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
 
-  <!-- Contact Section -->
-  <section>
-    <h2>Contact</h2>
-    <p>Email: harsha145.appikatla@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/HarshaAppikatla" target="_blank">
-      github.com/HarshaAppikatla</a></p>
-  </section>
+          <!-- Project 3 (Placeholder for fullness) -->
+          <article class="project-card">
+            <div class="project-content">
+              <h3 class="project-title">Personal Portfolio</h3>
+              <p class="project-desc">A modern, responsive portfolio website built with semantic HTML5 and vanilla CSS,
+                featuring dark mode and glassmorphism design elements.</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Design</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-text">View Source <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding"
+      style="background: linear-gradient(180deg, var(--bg-dark) 0%, #0f0f16 100%);">
+      <div class="container contact-container">
+        <h2 class="section-title">Get In <span class="accent-text">Touch</span></h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.2rem;">Currently looking for new
+          opportunities. Whether you have a question or just want to say hi, my inbox is open!</p>
+        <a href="mailto:harsha145.appikatla@gmail.com" class="btn btn-primary"
+          style="padding: 15px 40px; font-size: 1.1rem;"><i class="fas fa-envelope"></i> Say Hello</a>
+
+        <div style="margin-top: 50px; display: flex; justify-content: center; gap: 30px;">
+          <a href="https://github.com/HarshaAppikatla" target="_blank"
+            style="font-size: 1.5rem; color: var(--text-muted);"><i class="fab fa-github"></i></a>
+          <a href="#" style="font-size: 1.5rem; color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="font-size: 1.5rem; color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Harsha Vardhan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Animations Script -->
+  <script>
+    // Simple scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.project-card, .skill-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
 </body>
+
 </html>
