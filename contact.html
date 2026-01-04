@@ -39,30 +39,89 @@
 
         <section class="section-padding" style="padding-top: 0;">
             <div class="container">
-                <div
-                    style="max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                <div class="contact-container">
 
-                    <div style="text-align: center; margin-bottom: 40px;">
-                        <a href="mailto:harshaappikatla.cs@gmail.com"
-                            style="display: block; font-size: 1.5rem; margin-bottom: 10px; color: var(--accent-primary);">harshaappikatla.cs@gmail.com</a>
-                        <p style="color: var(--text-muted);">I typically respond within 24 hours.</p>
+                    <!-- Left Column: Contact Info -->
+                    <div class="contact-info-card">
+                        <h2 style="margin-bottom: 30px;">Get in <span class="accent-text">Touch</span></h2>
+                        <p style="color: var(--text-muted); margin-bottom: 40px; line-height: 1.6;">
+                            I'm currently looking for full-time opportunities and internships.
+                            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        </p>
+
+                        <div style="display: flex; flex-direction: column; gap: 25px;">
+                            <!-- Email -->
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div
+                                    style="width: 50px; height: 50px; background: rgba(99,102,241,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent-primary);">
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        style="display: block; font-size: 0.85rem; color: var(--text-muted);">Email</span>
+                                    <a href="mailto:harshaappikatla.cs@gmail.com"
+                                        style="color: white; font-weight: 500;">harshaappikatla.cs@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div
+                                    style="width: 50px; height: 50px; background: rgba(10,102,194,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #0a66c2;">
+                                    <i class="fab fa-linkedin-in fa-lg"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        style="display: block; font-size: 0.85rem; color: var(--text-muted);">LinkedIn</span>
+                                    <a href="https://www.linkedin.com/in/appikatlaharshavardhan/" target="_blank"
+                                        style="color: white; font-weight: 500;">Harsha Vardhan</a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div
+                                    style="width: 50px; height: 50px; background: rgba(16,185,129,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #10b981;">
+                                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        style="display: block; font-size: 0.85rem; color: var(--text-muted);">Location</span>
+                                    <span style="color: white; font-weight: 500;">Andhra Pradesh, India</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <a href="mailto:harshaappikatla.cs@gmail.com" class="btn btn-primary"
-                            style="text-align: center;">
-                            <i class="fas fa-envelope" style="margin-right: 10px;"></i> Send an Email
-                        </a>
-                        <a href="https://github.com/HarshaAppikatla" target="_blank" class="btn btn-outline"
-                            style="text-align: center;">
-                            <i class="fab fa-github" style="margin-right: 10px;"></i> Check GitHub Profile
-                        </a>
-                        <!-- Add LinkedIn or others here -->
-                        <a href="https://www.linkedin.com/in/appikatlaharshavardhan/" target="_blank"
-                            class="btn btn-outline"
-                            style="text-align: center; border-color: rgba(255,255,255,0.1); color: var(--text-muted);">
-                            <i class="fab fa-linkedin" style="margin-right: 10px;"></i> LinkedIn
-                        </a>
+                    <!-- Right Column: Functional Form -->
+                    <div class="contact-form-card">
+                        <form action="https://formsubmit.co/harshaappikatla.cs@gmail.com" method="POST">
+                            <!-- Helper Settings for FormSubmit -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://harshaappikatla.github.io/contact.html">
+                            <input type="hidden" name="_subject" value="New Submission from Portfolio!">
+
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" name="email" class="form-input" placeholder="john@example.com"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea name="message" class="form-textarea"
+                                    placeholder="Hi Harsha, I'd like to discuss..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                Send Message <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                            </button>
+                        </form>
                     </div>
 
                 </div>
