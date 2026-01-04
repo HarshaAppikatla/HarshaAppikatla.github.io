@@ -733,3 +733,55 @@ body.light-theme h3 {
     }
 }
 
+
+/* --- Light Mode Visibility Fixes --- */
+
+/* 1. Fix Invisible Gradient Text (Touch, Experiences) */
+body.light-theme .gradient-text {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #111827 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 2. Fix Outline Buttons (Resume) */
+body.light-theme .btn-outline {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+body.light-theme .btn-outline:hover {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* 3. Fix Contact Form Inputs */
+body.light-theme .form-input, 
+body.light-theme .form-textarea {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+}
+
+body.light-theme .form-input:focus, 
+body.light-theme .form-textarea:focus {
+    background: #ffffff;
+    border-color: var(--accent-primary);
+}
+
+/* 4. Fix Section Titles & Headers */
+body.light-theme h1, 
+body.light-theme h2, 
+body.light-theme h3,
+body.light-theme .project-title,
+body.light-theme .blog-title {
+    color: #111827;
+}
+
+body.light-theme .project-desc, 
+body.light-theme .blog-excerpt,
+body.light-theme p {
+    color: #4b5563;
+}
+
