@@ -513,3 +513,19 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+
+/* CSS Patch to fix Contact Page Layout */
+.contact-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    text-align: left !important;
+    max-width: 1000px !important;
+    gap: 50px !important;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr !important;
+    }
+}
