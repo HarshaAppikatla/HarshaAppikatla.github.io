@@ -79,6 +79,18 @@ I don't just write code; I build **systems**. My passion lies in engineering eff
   </table>
 </div>
 
+## 🎓 Education
+
+<div align="center">
+  <img src="https://img.shields.io/badge/VIT--AP_University-CSE_Integrated_M.Tech-blue?style=for-the-badge&logo=googlescholar&logoColor=white" alt="University" />
+  <img src="https://img.shields.io/badge/CGPA-8.8%20%2F%2010-success?style=for-the-badge&logo=mediafire&logoColor=white" alt="CGPA" />
+  <img src="https://img.shields.io/badge/Graduating-2027-orange?style=for-the-badge&logo=googlecalendar&logoColor=white" alt="Graduation Year" />
+</div>
+
+<p align="center">
+  <em>Pursuing 5-Year Integrated M.Tech in Software Engineering (2022 - 2027)</em>
+</p>
+
 ## 🚀 Featured Engineering
 
 ### 📮 [AI-Powered Postal Grievance System](projects.html)
