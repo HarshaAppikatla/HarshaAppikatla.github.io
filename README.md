@@ -1,18 +1,21 @@
+![Porterfly Banner](banner.png)
+
 <div align="center">
 
-  # Harsha Vardhan
-  ### 🚀 Software Engineer & Full Stack Developer
-
+  <h1 style="font-size: 3rem; font-weight: bold; margin-top: 20px;">Harsha Vardhan</h1>
+  <p style="font-size: 1.2rem; color: #a0a0b0;">
+    <strong>Software Engineer | Full Stack Specialist | Problem Solver</strong>
+  </p>
+  
   <p align="center">
     <a href="https://harshaappikatla.github.io/">
-      <img src="https://img.shields.io/badge/View_Portfolio-Live_Demo-6366f1?style=for-the-badge&logo=github&logoColor=white" alt="Live Portfolio" />
+      <img src="https://img.shields.io/badge/Website-Live_Demo-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Portfolio" />
+    </a>
+    <a href="resume.pdf">
+        <img src="https://img.shields.io/badge/Resume-Download_PDF-a855f7?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" alt="Download Resume" />
     </a>
   </p>
 
-  <p>
-    <em>Building scalable solutions with Java, Spring Boot, and Modern Web Technologies.</em>
-  </p>
-  
   <p>
     <a href="https://www.linkedin.com/in/appikatlaharshavardhan/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=flat-square&logo=linkedin" alt="LinkedIn" /></a>
     <a href="mailto:harsha145.appikatla@gmail.com"><img src="https://img.shields.io/badge/Email-Contact_Me-ea4335?style=flat-square&logo=gmail" alt="Email" /></a>
@@ -22,60 +25,43 @@
 
 ---
 
-## 👨‍💻 About This Repository
+## � Innovating with Code
 
-Welcome to the source code of my personal portfolio website. I built this from scratch to not only showcase my projects but to demonstrate my ability to design **clean, responsive, and performance-first** web experiences without relying on heavy frameworks.
+Welcome to my digital workspace. This repository houses the source code for my personal portfolio—a reflection of my journey as a computer science engineer. 
 
-This isn't just a static page; it's a reflection of my engineering philosophy: **Simplicity is the ultimate sophistication.**
+I don't just write code; I build **systems**. From AI-driven classification engines to comprehensive management platforms, my work focuses on efficiency, scalability, and user-centric design.
 
-## ⚡ Key Features
+## � Featured Engineering
 
-- **🎨 Modern Aesthetic**: Deep space dark mode with glassmorphism effects and aurora gradients.
-- **📱 True Responsiveness**: Fluid layouts that adapt seamlessly from desktops to mobile phones.
-- **🚀 High Performance**: Built with semantic HTML5 and Vanilla CSS/JS for lightning-fast load times.
-- **🔍 SEO Optimized**: structured data and semantic tags to ensure discoverability.
+| Project | Tech Stack | Impact |
+| :--- | :--- | :--- |
+| **[AI Postal Grievances](projects.html)** | `Java` `Spring Boot` `NLP` `Python` | Automated complaint processing, reducing manual categorization time by **40%**. |
+| **[Library Engine](projects.html)** | `JSP` `Servlet` `MySQL` `Bootstrap` | Digitized inventory for **1000+ books** with automated fine calculation logic. |
+| **[Portfolio V2](index.html)** | `HTML5` `CSS3` `Glassmorphism` | A **100/100 Lighthouse** performance score site with premium design aesthetics. |
 
-## 🛠️ The Tech Stack
+## �️ Technical Arsenal
 
-I believe in choosing the right tool for the job. For this portfolio, I stripped away the complexity of React/Angular to focus on raw web fundamentals:
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=java,spring,mysql,react,js,html,css,git" />
+</div>
 
-| Tech | Usage |
-| :--- | :--- |
-| **HTML5** | Semantic structure & Accessibility |
-| **CSS3** | Flexbox, Grid, Custom Variables, & Animations |
-| **JavaScript** | DOM Manipulation & Interactive Elements |
-| **Git/GitHub** | Version Control & CI/CD via GitHub Pages |
+<br>
 
----
+- **Core**: Deep expertise in **Java** and Object-Oriented Programming.
+- **Backend**: Proficient in building RESTful APIs with **Spring Boot**.
+- **Frontend**: Creating responsive interfaces with modern **JavaScript** and CSS3.
+- **Tools**: Version control with **Git**, containerization concepts, and agile workflows.
 
-## 📂 Project Highlights
+## 🌟 Philosophy
 
-While this repo contains the portfolio code, here are the major projects featured within it:
+> *"The function of good software is to make the complex appear simple."*
 
-### 1. 📮 AI-Powered Postal Grievance System
-A comprehensive solution using **Java Spring Boot & Python (NLP)** to automate and prioritize postal complaints.
-- *Status*: Completed
-
-### 2. � Library Management System
-A robust web application for managing library assets, fines, and memberships.
-- *Status*: Completed
-
----
-
-## 🔧 For Developers: Quick Start
-
-If you want to poke around the code or fork this design:
-
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/HarshaAppikatla/HarshaAppikatla.github.io.git
-   ```
-2. **Open index.html**
-   Simply open the file in your browser. No build steps required! ⚡
+This portfolio is built with that ethos. No heavy frameworks where none are needed. Clean code. Semantic structure. Pure performance.
 
 ---
 
 <div align="center">
-  <p>🌟 <em>If you like this portfolio, feel free to give it a star!</em> 🌟</p>
+  <h3>Let's Build Something Amazing Together</h3>
+  <p>Open for opportunities and collaborations.</p>
   <p>&copy; 2025 Harsha Vardhan</p>
 </div>
