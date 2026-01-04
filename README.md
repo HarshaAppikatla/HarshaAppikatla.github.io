@@ -8,7 +8,7 @@
     <a href="https://harshaappikatla.github.io/">
       <img src="https://img.shields.io/badge/Website-Live_Demo-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Portfolio" />
     </a>
-    <a href="resume.pdf">
+    <a href="https://github.com/HarshaAppikatla/HarshaAppikatla.github.io/raw/main/resume.pdf">
         <img src="https://img.shields.io/badge/Resume-Download_PDF-a855f7?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" alt="Download Resume" />
     </a>
   </p>
