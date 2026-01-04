@@ -1,12 +1,9 @@
-![Porterfly Banner](banner.png)
-
 <div align="center">
+ 
+ <img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=40&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Hi%2C+I'm+Harsha+Vardhan.;Architecting+Scalable+Solutions.;Java+%2B+Modern+Web+Stack." alt="Typing SVG" />
 
-  <h1 style="font-size: 3rem; font-weight: bold; margin-top: 20px;">Harsha Vardhan</h1>
-  <p style="font-size: 1.2rem; color: #a0a0b0;">
-    <strong>Software Engineer | Full Stack Specialist | Problem Solver</strong>
-  </p>
-  
+  <h3 style="color: #a0a0b0;">Software Engineer | Full Stack Specialist | Problem Solver</h3>
+
   <p align="center">
     <a href="https://harshaappikatla.github.io/">
       <img src="https://img.shields.io/badge/Website-Live_Demo-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Portfolio" />
@@ -23,45 +20,93 @@
 
 </div>
 
----
-
-## � Innovating with Code
-
-Welcome to my digital workspace. This repository houses the source code for my personal portfolio—a reflection of my journey as a computer science engineer. 
-
-I don't just write code; I build **systems**. From AI-driven classification engines to comprehensive management platforms, my work focuses on efficiency, scalability, and user-centric design.
-
-## � Featured Engineering
-
-| Project | Tech Stack | Impact |
-| :--- | :--- | :--- |
-| **[AI Postal Grievances](projects.html)** | `Java` `Spring Boot` `NLP` `Python` | Automated complaint processing, reducing manual categorization time by **40%**. |
-| **[Library Engine](projects.html)** | `JSP` `Servlet` `MySQL` `Bootstrap` | Digitized inventory for **1000+ books** with automated fine calculation logic. |
-| **[Portfolio V2](index.html)** | `HTML5` `CSS3` `Glassmorphism` | A **100/100 Lighthouse** performance score site with premium design aesthetics. |
-
-## �️ Technical Arsenal
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=java,spring,mysql,react,js,html,css,git" />
-</div>
-
 <br>
 
-- **Core**: Deep expertise in **Java** and Object-Oriented Programming.
-- **Backend**: Proficient in building RESTful APIs with **Spring Boot**.
-- **Frontend**: Creating responsive interfaces with modern **JavaScript** and CSS3.
-- **Tools**: Version control with **Git**, containerization concepts, and agile workflows.
+<div align="center">
+  <blockquote>
+    <i>"The function of good software is to make the complex appear simple."</i>
+  </blockquote>
+</div>
 
-## 🌟 Philosophy
+---
 
-> *"The function of good software is to make the complex appear simple."*
+## ⚡ What I Do
 
-This portfolio is built with that ethos. No heavy frameworks where none are needed. Clean code. Semantic structure. Pure performance.
+I don't just write code; I build **systems**. My passion lies in engineering efficiency—whether it's automating postal grievances with AI or architecting robust library management engines. I bridge the gap between complex backend logic and sleek, user-centric frontends.
+
+- 🔭 I’m currently working on **Advanced Spring Boot Microservices**.
+- 🌱 I’m currently learning **Cloud Architecture & Docker**.
+- 💬 Ask me about **Java, algorithms, and system design**.
+
+## 🛠️ Technical Arsenal
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=java" width="45" height="45" alt="Java" />
+        <br>Java
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=spring" width="45" height="45" alt="Spring" />
+        <br>Spring
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=mysql" width="45" height="45" alt="MySQL" />
+        <br>MySQL
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=react" width="45" height="45" alt="React" />
+        <br>React
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=js" width="45" height="45" alt="JavaScript" />
+        <br>JS
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=html" width="45" height="45" alt="HTML" />
+        <br>HTML
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=css" width="45" height="45" alt="CSS" />
+        <br>CSS
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=git" width="45" height="45" alt="Git" />
+        <br>Git
+      </td>
+    </tr>
+  </table>
+</div>
+
+## 🚀 Featured Engineering
+
+### 📮 [AI-Powered Postal Grievance System](projects.html)
+> *Status: Completed | Stack: Java, NLP, Python*
+>
+> An intelligent system reducing manual complaint sorting by **40%**.
+> - Integrated **NLP models** for automatic categorization.
+> - Built a real-time admin dashboard for priority tracking.
+
+### 📚 [Library Management Engine](projects.html)
+> *Status: Completed | Stack: JSP, Servlet, MySQL*
+>
+> A digital backbone for library operations.
+> - Handles **1000+ book inventories** seamlessly.
+> - Automated fine calculation logic and user role management.
+
+---
+
+## 📈 GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=HarshaAppikatla&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Harsha's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HarshaAppikatla&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+</div>
 
 ---
 
 <div align="center">
-  <h3>Let's Build Something Amazing Together</h3>
   <p>Open for opportunities and collaborations.</p>
   <p>&copy; 2025 Harsha Vardhan</p>
 </div>
