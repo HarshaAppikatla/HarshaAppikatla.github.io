@@ -1019,3 +1019,68 @@ body.light-theme .nav-links a.active {
 }
 
 
+
+/* --- STYLISH ACHIEVEMENTS UPDATE --- */
+/* Making the CGPA pop with glow and gradients */
+
+.achievement-hero-card .achievement-pill {
+    padding: 12px 30px;
+    font-size: 1.05rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+/* Date Pill - Subtle & Sleek */
+.achievement-hero-card .pill-date {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* CGPA Pill - THE HIGHLIGHT */
+.achievement-hero-card .pill-cgpa {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.25) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #34d399; /* Bright Green */
+    font-weight: 800;
+    font-size: 1.3rem; /* Significantly Bigger */
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Light Mode CGPA Override */
+body.light-theme .achievement-hero-card .pill-cgpa {
+    background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+    color: #059669; /* Darker Green for Contrast */
+    border: 2px solid #10b981;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+}
+
+body.light-theme .achievement-hero-card .pill-date {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Animation for CGPA */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.achievement-hero-card .pill-cgpa {
+    animation: pulse-green 2s infinite;
+}
+
+.achievement-hero-card .pill-cgpa:hover {
+    transform: scale(1.05);
+    cursor: default;
+}
+
