@@ -609,3 +609,127 @@ nav {
     transform: translateX(5px);
 }
 
+
+/* --- Light Mode Variables --- */
+body.light-theme {
+    --bg-dark: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+}
+
+body.light-theme .nav-links a {
+    color: #4b5563;
+}
+
+body.light-theme .nav-links a:hover {
+    color: var(--accent-primary);
+}
+
+body.light-theme header {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .project-card, 
+body.light-theme .contact-info-card, 
+body.light-theme .contact-form-card,
+body.light-theme .timeline-content,
+body.light-theme .skill-item,
+body.light-theme .blog-card {
+    border-color: rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme h1, 
+body.light-theme h2, 
+body.light-theme h3 {
+    color: #111827;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-secondary);
+    transform: rotate(15deg);
+}
+
+/* --- Sticky Resume FAB --- */
+.sticky-resume {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-primary);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 25px var(--accent-glow);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none; /* Hidden by default */
+}
+
+.sticky-resume.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.sticky-resume:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.sticky-tooltip {
+    position: absolute;
+    right: 70px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: 0.3s;
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.sticky-resume:hover .sticky-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .sticky-resume {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
