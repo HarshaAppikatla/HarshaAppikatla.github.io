@@ -15,7 +15,7 @@
 
   <p>
     <a href="https://www.linkedin.com/in/appikatlaharshavardhan/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=flat-square&logo=linkedin" alt="LinkedIn" /></a>
-    <a href="mailto:harsha145.appikatla@gmail.com"><img src="https://img.shields.io/badge/Email-Contact_Me-ea4335?style=flat-square&logo=gmail" alt="Email" /></a>
+    <a href="mailto:harshaappikatla.cs@gmail.com"><img src="https://img.shields.io/badge/Email-Contact_Me-ea4335?style=flat-square&logo=gmail" alt="Email" /></a>
   </p>
 
 </div>
