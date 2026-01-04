@@ -109,11 +109,22 @@ I don't just write code; I build **systems**. My passion lies in engineering eff
 
 ---
 
+---
+
 ## 📈 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=HarshaAppikatla&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Harsha's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HarshaAppikatla&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+  <br>
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=HarshaAppikatla&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Harsha's GitHub Stats" />
+  </a>
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HarshaAppikatla&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+  </a>
+  <br>
+  <a href="https://github.com/DenverCoder1/github-readme-streak-stats">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=HarshaAppikatla&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Streak" />
+  </a>
 </div>
 
 ---
