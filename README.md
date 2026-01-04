@@ -1,6 +1,6 @@
 <div align="center">
  
- <img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=40&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Hi%2C+I'm+Harsha+Vardhan.;Architecting+Scalable+Solutions.;Java+%2B+Modern+Web+Stack." alt="Typing SVG" />
+ <img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=40&pause=1000&color=6366F1&center=true&vCenter=true&width=1000&lines=Hi%2C+I'm+Harsha+Vardhan.;Architecting+Scalable+Solutions.;Java+%2B+Modern+Web+Stack." alt="Typing SVG" />
 
   <h3 style="color: #a0a0b0;">Software Engineer | Full Stack Specialist | Problem Solver</h3>
 
