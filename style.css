@@ -289,9 +289,69 @@ nav {
 
 /* Contact */
 .contact-container {
-  text-align: center;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.contact-info-card {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
+}
+
+.contact-form-card {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer {
@@ -300,21 +360,6 @@ nav {
   color: var(--text-muted);
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
 }
 
 /* Responsive */
@@ -449,288 +494,210 @@ nav {
   position: absolute;
   left: 0;
   color: var(--accent-secondary);
-}/* Form Styles */
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-info-card {
-    background: var(--bg-card);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
-    height: 100%;
-}
-
-.contact-form-card {
-    background: var(--bg-card);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.form-input, .form-textarea {
-    width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: white;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus, .form-textarea:focus {
-    outline: none;
-    border-color: var(--accent-primary);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* CSS Patch to fix Contact Page Layout */
-.contact-container {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    text-align: left !important;
-    max-width: 1000px !important;
-    gap: 50px !important;
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr !important;
-    }
 }
 
 /* Blog/Thoughts Section */
 .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .blog-card {
-    background: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 16px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .blog-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .blog-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .blog-card:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .blog-date {
-    font-size: 0.85rem;
-    color: var(--accent-secondary);
-    margin-bottom: 10px;
-    font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--accent-secondary);
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .blog-title {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    line-height: 1.4;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .blog-excerpt {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    flex-grow: 1;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .read-more {
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .read-more i {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .blog-card:hover .read-more i {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 
 /* --- Light Mode Variables --- */
 body.light-theme {
-    --bg-dark: #f8f9fa;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f1f5f9;
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
-    --accent-glow: rgba(99, 102, 241, 0.15);
+  --bg-dark: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --accent-glow: rgba(99, 102, 241, 0.15);
 }
 
 body.light-theme .nav-links a {
-    color: #4b5563;
+  color: #4b5563;
 }
 
 body.light-theme .nav-links a:hover {
-    color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 body.light-theme header {
-    background: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 body.light-theme .footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-body.light-theme .project-card, 
-body.light-theme .contact-info-card, 
+body.light-theme .project-card,
+body.light-theme .contact-info-card,
 body.light-theme .contact-form-card,
 body.light-theme .timeline-content,
 body.light-theme .skill-item,
 body.light-theme .blog-card {
-    border-color: rgba(0,0,0,0.05);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-body.light-theme h1, 
-body.light-theme h2, 
+body.light-theme h1,
+body.light-theme h2,
 body.light-theme h3 {
-    color: #111827;
+  color: #111827;
 }
 
 /* --- Theme Toggle Button --- */
 .theme-toggle {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-left: 20px;
-    transition: color 0.3s ease;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: color 0.3s ease;
 }
 
 .theme-toggle:hover {
-    color: var(--accent-secondary);
-    transform: rotate(15deg);
+  color: var(--accent-secondary);
+  transform: rotate(15deg);
 }
 
 /* --- Sticky Resume FAB --- */
 .sticky-resume {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent-primary);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 10px 25px var(--accent-glow);
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    pointer-events: none; /* Hidden by default */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent-primary);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 25px var(--accent-glow);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  /* Hidden by default */
 }
 
 .sticky-resume.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }
 
 .sticky-resume:hover {
-    background: var(--accent-secondary);
-    transform: translateY(-5px) scale(1.1);
+  background: var(--accent-secondary);
+  transform: translateY(-5px) scale(1.1);
 }
 
 .sticky-tooltip {
-    position: absolute;
-    right: 70px;
-    background: var(--bg-card);
-    color: var(--text-main);
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(10px);
-    transition: 0.3s;
-    pointer-events: none;
-    border: 1px solid rgba(255,255,255,0.1);
+  position: absolute;
+  right: 70px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.3s;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sticky-resume:hover .sticky-tooltip {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 768px) {
-    .sticky-resume {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
+  .sticky-resume {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
 }
 
 
@@ -738,349 +705,207 @@ body.light-theme h3 {
 
 /* 1. Fix Invisible Gradient Text (Touch, Experiences) */
 body.light-theme .gradient-text {
-    background: linear-gradient(135deg, var(--accent-primary) 0%, #111827 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #111827 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* 2. Fix Outline Buttons (Resume) */
 body.light-theme .btn-outline {
-    border-color: var(--accent-primary);
-    color: var(--accent-primary);
-    font-weight: 600;
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  font-weight: 600;
 }
 
 body.light-theme .btn-outline:hover {
-    background: var(--accent-primary);
-    color: white;
+  background: var(--accent-primary);
+  color: white;
 }
 
 /* 3. Fix Contact Form Inputs */
-body.light-theme .form-input, 
+body.light-theme .form-input,
 body.light-theme .form-textarea {
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    color: #1f2937;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
 }
 
-body.light-theme .form-input:focus, 
+body.light-theme .form-input:focus,
 body.light-theme .form-textarea:focus {
-    background: #ffffff;
-    border-color: var(--accent-primary);
+  background: #ffffff;
+  border-color: var(--accent-primary);
 }
 
 /* 4. Fix Section Titles & Headers */
-body.light-theme h1, 
-body.light-theme h2, 
+body.light-theme h1,
+body.light-theme h2,
 body.light-theme h3,
 body.light-theme .project-title,
 body.light-theme .blog-title {
-    color: #111827;
+  color: #111827;
 }
 
-body.light-theme .project-desc, 
+body.light-theme .project-desc,
 body.light-theme .blog-excerpt,
 body.light-theme p {
-    color: #4b5563;
+  color: #4b5563;
 }
 
-
-/* --- Light Mode INLINE STYLE OVERRIDES --- */
-/* Use !important to override hardcoded HTML styles */
-
-/* 1. Nav Links */
-body.light-theme .nav-links a[style*=\
-color:white\] {
-    color: var(--accent-primary) !important;
-}
-
-/* 2. Tech Stack Tags */
-body.light-theme .tag {
-    color: var(--accent-primary) !important;
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    font-weight: 500;
-}
-
-/* 3. Achievements: Academic Card */
-body.light-theme .page-header + section div[style*=\linear-gradient\] {
-    background: white !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
-}
-
-body.light-theme .page-header + section div[style*=\linear-gradient\] h2 {
-    color: #111827 !important;
-}
-
-body.light-theme .page-header + section div[style*=\linear-gradient\] h3 {
-    color: #4b5563 !important;
-}
-
-/* 4. Achievements: Date Pill (2022-2027) */
-body.light-theme div[style*=\background:
-rgba
-255
-255
-255
-0.05
-\] {
-    background: white !important;
-    color: #1f2937 !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* 5. Project Card Icons (Circular backgrounds) */
-body.light-theme .project-content div[style*=\background:
-rgba
-255
-255
-255
-0.05
-\] {
-    background: #f3f4f6 !important;
-    border: 1px solid #e5e7eb;
-}
-
-/* 6. Contact Info Card Icons */
-body.light-theme .contact-info-item div[style*=\background:
-rgba
-255
-255
-255
-0.05
-\] {
-    background: #f3f4f6 !important;
-}
-
-
-/* --- Light Mode INLINE STYLE OVERRIDES --- */
-/* Use !important to override hardcoded HTML styles */
-
-/* 1. Nav Links */
-body.light-theme .nav-links a[style*='color:white'],
-body.light-theme .nav-links a[style*='color: white'] {
-    color: var(--accent-primary) !important;
-}
-
-/* 2. Tech Stack Tags */
-body.light-theme .tag {
-    color: var(--accent-primary) !important;
-    background: rgba(99, 102, 241, 0.1) !important;
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    font-weight: 500;
-}
-
-/* 3. Achievements: Academic Card */
-body.light-theme .page-header + section div[style*='linear-gradient'] {
-    background: white !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
-}
-
-body.light-theme .page-header + section div[style*='linear-gradient'] h2 {
-    color: #111827 !important;
-}
-
-body.light-theme .page-header + section div[style*='linear-gradient'] h3 {
-    color: #4b5563 !important;
-}
-
-/* 4. Achievements: Date Pill (2022-2027) */
-body.light-theme div[style*='rgba(255,255,255,0.05)'],
-body.light-theme div[style*='rgba(255, 255, 255, 0.05)'] {
-    background: white !important;
-    color: #1f2937 !important;
-    border: 1px solid #e5e7eb !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* 5. Project Card Icons (Circular backgrounds) */
-body.light-theme .project-content div[style*='rgba(255,255,255,0.05)'],
-body.light-theme .project-content div[style*='rgba(255, 255, 255, 0.05)'] {
-    background: #f3f4f6 !important;
-    border: 1px solid #e5e7eb;
-}
-
-/* 6. Contact Info Card Icons */
-body.light-theme .contact-info-item div[style*='rgba(255,255,255,0.05)'],
-body.light-theme .contact-info-item div[style*='rgba(255, 255, 255, 0.05)'] {
-    background: #f3f4f6 !important;
-}
-
-
-/* --- CLEANED CLASS DEFINITIONS (Replacing broken inline overrides) --- */
+/* --- DEFINITIONS FOR NEW CLASSES (Replacing inline styles) --- */
 
 /* 1. Projects: Tech Tags */
 .tag {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    /* Dark Mode Defaults */
-    background: rgba(99, 102, 241, 0.2);
-    color: white;
-    border: 1px solid transparent;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  /* Dark Mode Defaults */
+  background: rgba(99, 102, 241, 0.2);
+  color: white;
+  border: 1px solid transparent;
 }
 
 .tag-purple {
-    background: rgba(168, 85, 247, 0.2);
+  background: rgba(168, 85, 247, 0.2);
 }
 
 /* Light Mode Tags */
 body.light-theme .tag {
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--accent-primary);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    font-weight: 600;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent-primary);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  font-weight: 600;
 }
 
 body.light-theme .tag-purple {
-    background: rgba(168, 85, 247, 0.1);
-    color: #9333ea;
-    border-color: rgba(168, 85, 247, 0.2);
+  background: rgba(168, 85, 247, 0.1);
+  color: #9333ea;
+  border-color: rgba(168, 85, 247, 0.2);
 }
 
 /* 2. Achievements: Hero Card */
 .achievement-hero-card {
-    background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(10,10,12,0.5) 100%);
-    padding: 50px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 80px;
-    text-align: center;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    color: white;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(10, 10, 12, 0.5) 100%);
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 80px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  color: white;
 }
 
 .achievement-hero-card .glow-effect {
-    position: absolute;
-    top: -50px; left: -50px; width: 150px; height: 150px;
-    background: var(--accent-primary);
-    filter: blur(80px);
-    opacity: 0.3;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: var(--accent-primary);
+  filter: blur(80px);
+  opacity: 0.3;
 }
 
 /* Light Mode Hero Card */
 body.light-theme .achievement-hero-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    color: #1f2937;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: #1f2937;
 }
 
 body.light-theme .achievement-hero-card h2 {
-    color: #111827; /* Dark title */
+  color: #111827;
+  /* Dark title */
 }
 
-/* 3. Achievements: Pills */
+/* 3. Achievements: Pills Styling */
 .achievement-pill {
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.05); /* Dark mode default */
-    color: white;
-    font-weight: 500;
-    display: flex; 
-    align-items: center;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  /* Glassy default */
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 8px;
 }
 
-.pill-cgpa {
-    background: rgba(16, 185, 129, 0.15);
-    color: #10b981;
-    border-color: rgba(16, 185, 129, 0.3);
-    font-weight: 600;
+/* CGPA Pill - Premium Styling */
+.achievement-hero-card .pill-cgpa {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.25) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+  /* Bright Green */
+  font-weight: 800;
+  font-size: 1.3rem;
+  /* Highlighted Size */
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  position: relative;
+  z-index: 1;
+  margin-left: 15px;
+  /* Spacing */
+}
+
+.achievement-hero-card .pill-cgpa:hover {
+  transform: scale(1.05);
 }
 
 /* Light Mode Pills */
 body.light-theme .achievement-pill.pill-date {
-    background: white;
-    color: #374151;
-    border-color: #e5e7eb;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: white;
+  color: #374151;
+  border-color: #e5e7eb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .achievement-hero-card .pill-cgpa {
+  background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+  color: #059669;
+  /* Darker Green for Contrast */
+  border: 2px solid #10b981;
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.25);
+}
+
+/* Pulse Animation for CGPA */
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.achievement-hero-card .pill-cgpa {
+  animation: pulse-green 2s infinite;
 }
 
 /* 4. Active Nav Label */
 .nav-links a.active {
-    color: white; /* Dark mode default */
-    font-weight: 600;
+  color: white;
+  /* Dark mode default */
+  font-weight: 600;
 }
 
 body.light-theme .nav-links a.active {
-    color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
 }
-
-
-
-/* --- STYLISH ACHIEVEMENTS UPDATE --- */
-/* Making the CGPA pop with glow and gradients */
-
-.achievement-hero-card .achievement-pill {
-    padding: 12px 30px;
-    font-size: 1.05rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-/* Date Pill - Subtle & Sleek */
-.achievement-hero-card .pill-date {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* CGPA Pill - THE HIGHLIGHT */
-.achievement-hero-card .pill-cgpa {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.25) 100%);
-    border: 1px solid rgba(16, 185, 129, 0.5);
-    color: #34d399; /* Bright Green */
-    font-weight: 800;
-    font-size: 1.3rem; /* Significantly Bigger */
-    letter-spacing: 0.5px;
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
-    position: relative;
-    z-index: 1;
-}
-
-/* Light Mode CGPA Override */
-body.light-theme .achievement-hero-card .pill-cgpa {
-    background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
-    color: #059669; /* Darker Green for Contrast */
-    border: 2px solid #10b981;
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
-}
-
-body.light-theme .achievement-hero-card .pill-date {
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* Animation for CGPA */
-@keyframes pulse-green {
-    0% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-    }
-}
-
-.achievement-hero-card .pill-cgpa {
-    animation: pulse-green 2s infinite;
-}
-
-.achievement-hero-card .pill-cgpa:hover {
-    transform: scale(1.05);
-    cursor: default;
-}
-
