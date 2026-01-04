@@ -785,3 +785,73 @@ body.light-theme p {
     color: #4b5563;
 }
 
+
+/* --- Light Mode INLINE STYLE OVERRIDES --- */
+/* Use !important to override hardcoded HTML styles */
+
+/* 1. Nav Links */
+body.light-theme .nav-links a[style*=\
+color:white\] {
+    color: var(--accent-primary) !important;
+}
+
+/* 2. Tech Stack Tags */
+body.light-theme .tag {
+    color: var(--accent-primary) !important;
+    background: rgba(99, 102, 241, 0.1) !important;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    font-weight: 500;
+}
+
+/* 3. Achievements: Academic Card */
+body.light-theme .page-header + section div[style*=\linear-gradient\] {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+}
+
+body.light-theme .page-header + section div[style*=\linear-gradient\] h2 {
+    color: #111827 !important;
+}
+
+body.light-theme .page-header + section div[style*=\linear-gradient\] h3 {
+    color: #4b5563 !important;
+}
+
+/* 4. Achievements: Date Pill (2022-2027) */
+body.light-theme div[style*=\background:
+rgba
+255
+255
+255
+0.05
+\] {
+    background: white !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 5. Project Card Icons (Circular backgrounds) */
+body.light-theme .project-content div[style*=\background:
+rgba
+255
+255
+255
+0.05
+\] {
+    background: #f3f4f6 !important;
+    border: 1px solid #e5e7eb;
+}
+
+/* 6. Contact Info Card Icons */
+body.light-theme .contact-info-item div[style*=\background:
+rgba
+255
+255
+255
+0.05
+\] {
+    background: #f3f4f6 !important;
+}
+
