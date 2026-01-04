@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Harsha Vardhan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Harsha<span class="accent-text">.dev</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active" style="color:white;">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Let's
+                    Talk</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>My <span class="gradient-text">Work</span></h1>
+                <p>A showcase of technical projects solving real-world problems.</p>
+            </div>
+        </div>
+
+        <!-- Project 1: Postal System -->
+        <section class="project-detail-section">
+            <div class="container">
+                <div class="project-detail-grid">
+                    <div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">AI-Powered Postal <br><span
+                                class="accent-text">Grievance System</span></h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">
+                            An intelligent system built to modernize the postal complaints mechanism. It uses Natural
+                            Language Processing (NLP) to automatically classify, categorize, and prioritize grievances,
+                            significantly reducing manual overhead.
+                        </p>
+
+                        <h3 style="margin-top: 30px;">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Automated complaint classification using NLP models.</li>
+                            <li>Real-time priority tagging based on sentiment analysis.</li>
+                            <li>Admin dashboard for visualizing grievance trends.</li>
+                            <li>Multi-lingual support for wider accessibility.</li>
+                        </ul>
+
+                        <div style="margin-top: 30px;">
+                            <a href="#" class="btn btn-primary">View GitHub</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            style="background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h3 style="margin-bottom: 20px;">Tech Stack</h3>
+                            <div class="tech-stack-list">
+                                <span class="tag" style="background: rgba(99, 102, 241, 0.2); color: #fff;">Java</span>
+                                <span class="tag" style="background: rgba(99, 102, 241, 0.2); color: #fff;">Spring
+                                    Boot</span>
+                                <span class="tag" style="background: rgba(99, 102, 241, 0.2); color: #fff;">Python
+                                    (NLP)</span>
+                                <span class="tag" style="background: rgba(99, 102, 241, 0.2); color: #fff;">MySQL</span>
+                                <span class="tag"
+                                    style="background: rgba(99, 102, 241, 0.2); color: #fff;">React/HTML</span>
+                            </div>
+
+                            <h3 style="margin-bottom: 20px; margin-top: 30px;">Challenges Solved</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                                Integrating the Python NLP service with the Java Spring Boot backend required a robust
+                                API design. We implemented a microservices approach to ensure scalability and fault
+                                tolerance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 2: Library System -->
+        <section class="project-detail-section">
+            <div class="container">
+                <div class="project-detail-grid">
+                    <div style="order: 2;"> <!-- Swap order for alternating layout -->
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Library <br><span
+                                class="accent-text">Management System</span></h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">
+                            A comprehensive web application designed to digitize library operations. From tracking book
+                            inventory to managing member subscriptions and fine calculations, this system handles it
+                            all.
+                        </p>
+
+                        <h3 style="margin-top: 30px;">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>Role-based authentication (Admin vs. Student).</li>
+                            <li>Real-time book availability checker.</li>
+                            <li>Automatic fine calculation for overdue returns.</li>
+                            <li>Transaction history layout.</li>
+                        </ul>
+
+                        <div style="margin-top: 30px;">
+                            <a href="#" class="btn btn-primary">View GitHub</a>
+                        </div>
+                    </div>
+                    <div style="order: 1;">
+                        <div
+                            style="background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h3 style="margin-bottom: 20px;">Tech Stack</h3>
+                            <div class="tech-stack-list">
+                                <span class="tag" style="background: rgba(168, 85, 247, 0.2); color: #fff;">Java</span>
+                                <span class="tag"
+                                    style="background: rgba(168, 85, 247, 0.2); color: #fff;">JSP/Servlet</span>
+                                <span class="tag" style="background: rgba(168, 85, 247, 0.2); color: #fff;">MySQL</span>
+                                <span class="tag"
+                                    style="background: rgba(168, 85, 247, 0.2); color: #fff;">Bootstrap</span>
+                            </div>
+
+                            <h3 style="margin-bottom: 20px; margin-top: 30px;">Challenges Solved</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                                Designing a normalized database schema to handle complex relationships between books,
+                                members, and transactions without data redundancy was a key learning outcome.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Harsha Vardhan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

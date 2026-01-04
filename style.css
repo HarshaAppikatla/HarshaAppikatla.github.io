@@ -316,3 +316,137 @@ nav {
     font-size: 2rem;
   }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    /* Mobile menu implementation would go here */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Page Header */
+.page-header {
+  padding-top: 150px;
+  padding-bottom: 50px;
+  text-align: center;
+  background: radial-gradient(circle at center top, rgba(99, 102, 241, 0.15) 0%, rgba(10, 10, 12, 0) 70%);
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Timeline (About Page) */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: 0.3s;
+}
+
+.timeline-content:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-5px);
+}
+
+.timeline-date {
+  color: var(--accent-primary);
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Project Detail View */
+.project-detail-section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.tech-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.feature-list {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-muted);
+}
+
+.feature-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-secondary);
+}
