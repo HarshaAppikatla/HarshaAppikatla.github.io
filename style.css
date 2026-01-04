@@ -910,3 +910,112 @@ body.light-theme .contact-info-item div[style*='rgba(255, 255, 255, 0.05)'] {
     background: #f3f4f6 !important;
 }
 
+
+/* --- CLEANED CLASS DEFINITIONS (Replacing broken inline overrides) --- */
+
+/* 1. Projects: Tech Tags */
+.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    /* Dark Mode Defaults */
+    background: rgba(99, 102, 241, 0.2);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.tag-purple {
+    background: rgba(168, 85, 247, 0.2);
+}
+
+/* Light Mode Tags */
+body.light-theme .tag {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--accent-primary);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    font-weight: 600;
+}
+
+body.light-theme .tag-purple {
+    background: rgba(168, 85, 247, 0.1);
+    color: #9333ea;
+    border-color: rgba(168, 85, 247, 0.2);
+}
+
+/* 2. Achievements: Hero Card */
+.achievement-hero-card {
+    background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(10,10,12,0.5) 100%);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 80px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.achievement-hero-card .glow-effect {
+    position: absolute;
+    top: -50px; left: -50px; width: 150px; height: 150px;
+    background: var(--accent-primary);
+    filter: blur(80px);
+    opacity: 0.3;
+}
+
+/* Light Mode Hero Card */
+body.light-theme .achievement-hero-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #1f2937;
+}
+
+body.light-theme .achievement-hero-card h2 {
+    color: #111827; /* Dark title */
+}
+
+/* 3. Achievements: Pills */
+.achievement-pill {
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05); /* Dark mode default */
+    color: white;
+    font-weight: 500;
+    display: flex; 
+    align-items: center;
+}
+
+.pill-cgpa {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+    font-weight: 600;
+}
+
+/* Light Mode Pills */
+body.light-theme .achievement-pill.pill-date {
+    background: white;
+    color: #374151;
+    border-color: #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 4. Active Nav Label */
+.nav-links a.active {
+    color: white; /* Dark mode default */
+    font-weight: 600;
+}
+
+body.light-theme .nav-links a.active {
+    color: var(--accent-primary) !important;
+}
+
+
