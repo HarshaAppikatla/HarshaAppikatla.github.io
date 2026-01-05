@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Unified Scroll Event Handler ---
     const stickyResumeBtn = document.getElementById('sticky-resume');
     const header = document.querySelector('header');
-    let lastScrollY = 0;
 
     // Throttled Scroll Handler
     let isScrolling = false;
@@ -97,6 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /**
+     * Handles all scroll-based UI updates.
+     * Centralized to avoid multiple scroll listeners and layout thrashing.
+     */
     function handleScroll() {
         const scrollY = window.scrollY;
 
@@ -117,8 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 stickyResumeBtn.classList.remove('visible');
             }
         }
-
-        lastScrollY = scrollY;
     }
 
     // --- 4. Mobile Menu Logic ---
