@@ -1035,3 +1035,18 @@ body.light-theme .impact-badge {
     border-color: #10b981;
 }
 
+
+/* Typewriter Cursor */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--accent-primary);
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+

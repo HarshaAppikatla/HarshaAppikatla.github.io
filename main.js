@@ -87,6 +87,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 4. Typewriter Effect (Hero Section) ---
+    const typeWriterElement = document.getElementById('typewriter-text');
+    if (typeWriterElement) {
+        const texts = ["Java Systems.", "Web Apps.", "Secure APIs.", "Cloud Solutions."];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            const currentText = texts[textIndex];
+
+            if (isDeleting) {
+                typeWriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50; // Faster deletion
+            } else {
+                typeWriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100; // Normal typing
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typing loop
+        setTimeout(type, 1000);
+    }
+
     // --- 3. Mobile Menu Toggle (Optional Future Proofing) ---
     // If we add a hamburger menu later, logic goes here.
 });
