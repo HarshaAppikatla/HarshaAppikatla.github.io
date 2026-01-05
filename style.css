@@ -955,3 +955,9 @@ body.light-theme .nav-links a.active {
     padding: 40px 0;
 }
 
+
+/* FIX: Timeline Vertical Line Visibility in Light Mode */
+body.light-theme .timeline::after {
+    background: rgba(0, 0, 0, 0.1);
+}
+
