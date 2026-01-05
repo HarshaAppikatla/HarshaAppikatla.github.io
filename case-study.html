@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: RINL System | Harsha Vardhan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Harsha<span class="accent-text">.dev</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Let's
+                    Talk</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Case Study Hero -->
+        <section class="section" style="padding-top: 120px; padding-bottom: 60px;">
+            <div class="container">
+                <span class="impact-badge">Industrial Flagship Project</span>
+                <h1 style="font-size: 3rem; margin-top: 20px; line-height: 1.2;">
+                    Digitizing Gate Access for <br><span class="gradient-text">Visakhapatnam Steel Plant</span>
+                </h1>
+                <p style="color: var(--text-muted); font-size: 1.2rem; margin-top: 20px; max-width: 800px;">
+                    How I engineered a role-based Gate Pass Management System to secure entry for thousands of employees
+                    and reduce manual verification time by 50%.
+                </p>
+
+                <div
+                    style="margin-top: 40px; display: flex; gap: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+                    <div>
+                        <span style="display: block; color: var(--text-muted); font-size: 0.9rem;">Client</span>
+                        <strong style="font-size: 1.1rem; margin-top: 5px; display: block;">RINL (Vizag Steel)</strong>
+                    </div>
+                    <div>
+                        <span style="display: block; color: var(--text-muted); font-size: 0.9rem;">Role</span>
+                        <strong style="font-size: 1.1rem; margin-top: 5px; display: block;">Backend Engineer</strong>
+                    </div>
+                    <div>
+                        <span style="display: block; color: var(--text-muted); font-size: 0.9rem;">Stack</span>
+                        <strong style="font-size: 1.1rem; margin-top: 5px; display: block;">Java Spring Boot,
+                            Oracle</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Challenge -->
+        <section class="section" style="background: var(--bg-card);">
+            <div class="container" style="max-width: 900px;">
+                <h2 style="font-size: 2rem; margin-bottom: 30px;">🛑 The Challenge</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px;">
+                    Processing gate passes for contractors and employees at RINL was a manual, paper-heavy process.
+                    Security personnel had to manually verify physical IDs against printed lists, leading to:
+                </p>
+                <ul style="list-style: none; margin-bottom: 40px;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-times-circle" style="color: #ef4444;"></i>
+                        <span>Long queues during shift changes (20+ minutes).</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-times-circle" style="color: #ef4444;"></i>
+                        <span>High risk of unauthorized entry due to human error.</span>
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-times-circle" style="color: #ef4444;"></i>
+                        <span>No digital audit trail for visitor tracking.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section class="section">
+            <div class="container" style="max-width: 900px;">
+                <h2 style="font-size: 2rem; margin-bottom: 30px;">💡 The Engineering Solution</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
+                    I developed a <strong>Centralized Digital Gate Pass System</strong> using Java Spring Boot. The
+                    system replaced paper logs with a role-based digital workflow, allowing authorized requestors to
+                    generate passes and security to verify them instantly.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px;">
+                    <div
+                        style="background: var(--bg-card); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                        <h3 style="margin-bottom: 15px;"><i class="fas fa-shield-alt"
+                                style="color: var(--accent-primary);"></i> Secure RBAC</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">
+                            Implemented strict Role-Based Access Control. Only Department Heads could approve passes,
+                            while Security could only 'View & Verify'.
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--bg-card); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                        <h3 style="margin-bottom: 15px;"><i class="fas fa-database"
+                                style="color: var(--accent-primary);"></i> Oracle Optimization</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">
+                            Designed normalized database schemas to handle 1000s of daily transaction logs without
+                            latency.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">System Architecture</h3>
+                <div
+                    style="background: #111; padding: 40px; border-radius: 20px; text-align: center; border: 1px dashed rgba(255,255,255,0.2);">
+                    <p style="font-family: monospace; color: var(--accent-primary);">[ Architecture Diagram Placeholder:
+                        Spring Boot API <-> Oracle DB <-> Angular Frontend ]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Impact -->
+        <section class="section" style="padding-bottom: 80px;">
+            <div class="container" style="max-width: 900px;">
+                <h2 style="font-size: 2rem; margin-bottom: 30px;">✅ The Outcome</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div
+                        style="text-align: center; padding: 30px; background: rgba(16, 185, 129, 0.1); border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <span style="display: block; font-size: 2.5rem; font-weight: 700; color: #34d399;">50%</span>
+                        <span style="font-size: 0.9rem; color: var(--text-main);">Faster Verification</span>
+                    </div>
+                    <div
+                        style="text-align: center; padding: 30px; background: rgba(16, 185, 129, 0.1); border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <span style="display: block; font-size: 2.5rem; font-weight: 700; color: #34d399;">0</span>
+                        <span style="font-size: 0.9rem; color: var(--text-main);">Security Breaches</span>
+                    </div>
+                    <div
+                        style="text-align: center; padding: 30px; background: rgba(16, 185, 129, 0.1); border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <span style="display: block; font-size: 2.5rem; font-weight: 700; color: #34d399;">100%</span>
+                        <span style="font-size: 0.9rem; color: var(--text-main);">Digital Audit Trail</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta-section"
+            style="padding: 60px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 20px;">Want to see code?</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Due to NDA, code is limited, but I can discuss
+                    the architecture in detail.</p>
+                <a href="contact.html" class="btn btn-primary">Schedule a Chat</a>
+                <a href="projects.html" class="btn btn-outline" style="margin-left: 20px;">Back to Projects</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Harsha Vardhan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
