@@ -127,11 +127,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileBtn && navLinks) {
+        // Set initial state
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileBtn.setAttribute('aria-controls', 'nav-links'); // Best practice
+
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            const icon = mobileBtn.querySelector('i');
             const isOpen = navLinks.classList.contains('active');
 
+            // Toggle ARIA State
+            mobileBtn.setAttribute('aria-expanded', isOpen);
+
+            const icon = mobileBtn.querySelector('i');
             // Icon Flip
             if (isOpen) {
                 icon.classList.remove('fa-bars');
