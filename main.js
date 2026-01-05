@@ -90,4 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Mobile Menu Toggle (Optional Future Proofing) ---
     // If we add a hamburger menu later, logic goes here.
 });
-```
