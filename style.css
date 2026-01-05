@@ -1133,3 +1133,42 @@ body.light-theme .case-study-flow {
     60% { transform: translateY(-5px) translateX(-50%); }
 }
 
+
+/* MOBILE MENU STYLES (Fix 8) */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+    .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-card); /* Glass effect if supported */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        z-index: 1000;
+        border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-links.active {
+        right: 0;
+    }
+    body.light-theme .nav-links {
+        background: rgba(255,255,255,0.95);
+        border-left: 1px solid rgba(0,0,0,0.1);
+    }
+}
+

@@ -125,6 +125,35 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 1000);
     }
 
-    // --- 3. Mobile Menu Toggle (Optional Future Proofing) ---
-    // If we add a hamburger menu later, logic goes here.
+    // --- 3. Mobile Menu Toggle ---
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Smooth Scroll Polyfill for all Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            navLinks.classList.remove('active'); // Close menu on click
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
