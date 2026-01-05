@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initTypewriter();
     initGlobalScrollHandler();
+    initContactForm();
 });
 
 /**
