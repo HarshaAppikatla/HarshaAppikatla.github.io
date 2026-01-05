@@ -1190,3 +1190,25 @@ body.light-theme header.scrolled {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
+
+/* FOOTER LINKS (Fix 7) */
+.footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--accent-primary);
+}
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
