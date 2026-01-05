@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Select elements to animate
         // We target cards, titles, and major text blocks
-        const animatedElements = document.querySelectorAll('.project-card, .skill-item, .section-title, .hero-content, .timeline-item, .blog-card, .contact-info-card, .contact-form-card, .achievement-hero-card');
+        const animatedElements = document.querySelectorAll('.project-card, .skill-item, .section-title, .hero-content, .timeline-item, .blog-card, .contact-info-card, .contact-form-card, .achievement-hero-card, .project-detail-grid > div');
 
         animatedElements.forEach((el, index) => {
             el.classList.add('hidden-scroll');
