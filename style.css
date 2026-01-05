@@ -1081,3 +1081,29 @@ body.light-theme .impact-badge {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+
+/* CASE STUDY FLOW (Fix 6) */
+.case-study-flow {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.case-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    align-items: baseline;
+}
+.case-item:last-child { margin-bottom: 0; }
+.case-icon { flex-shrink: 0; font-size: 1.1rem; }
+.case-label { color: var(--text-main); font-weight: 700; margin-right: 5px; }
+.case-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+body.light-theme .case-study-flow {
+    background: #f9fafb;
+    border-color: rgba(0,0,0,0.05);
+}
+
