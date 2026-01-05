@@ -1,131 +1,127 @@
-// Main JavaScript for Harsha's Portfolio
+/**
+ * Main JavaScript for Harsha's Portfolio
+ * Refactored for Performance, Scalability, and Clean Code standards.
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Theme Toggle Logic ---
-    const themeParams = {
+    // --- Configuration Constants ---
+    const THEME_CONFIG = {
         key: 'harsha_portfolio_theme',
-        light: 'light-theme',
+        lightClass: 'light-theme',
         iconMoon: 'fa-moon',
         iconSun: 'fa-sun'
     };
 
+    const ANIMATION_CONFIG = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+        selectors: [
+            '.project-card',
+            '.skill-item',
+            '.section-title',
+            '.hero-content',
+            '.timeline-item',
+            '.blog-card',
+            '.contact-info-card',
+            '.contact-form-card',
+            '.achievement-hero-card',
+            '.project-detail-grid > div'
+        ]
+    };
+
+    const TYPEWRITER_TEXTS = ["Java Systems.", "Web Apps.", "Secure APIs.", "Cloud Solutions."];
+
+    // --- 1. Theme Toggle Logic ---
     const toggleBtn = document.getElementById('theme-toggle');
     const toggleIcon = toggleBtn ? toggleBtn.querySelector('i') : null;
     const body = document.body;
 
     // Check saved preference
-    const savedTheme = localStorage.getItem(themeParams.key);
+    const savedTheme = localStorage.getItem(THEME_CONFIG.key);
     if (savedTheme === 'light') {
-        body.classList.add(themeParams.light);
-        if (toggleIcon) {
-            toggleIcon.classList.remove(themeParams.iconSun);
-            toggleIcon.classList.add(themeParams.iconMoon);
-        }
+        body.classList.add(THEME_CONFIG.lightClass);
+        updateThemeIcon(true);
     }
 
     // Toggle Event
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            body.classList.toggle(themeParams.light);
-            const isLight = body.classList.contains(themeParams.light);
-
-            // Update Icon
-            if (toggleIcon) {
-                if (isLight) {
-                    toggleIcon.classList.replace(themeParams.iconSun, themeParams.iconMoon);
-                } else {
-                    toggleIcon.classList.replace(themeParams.iconMoon, themeParams.iconSun);
-                }
-            }
-
-            // Save Preference
-            localStorage.setItem(themeParams.key, isLight ? 'light' : 'dark');
+            body.classList.toggle(THEME_CONFIG.lightClass);
+            const isLight = body.classList.contains(THEME_CONFIG.lightClass);
+            updateThemeIcon(isLight);
+            localStorage.setItem(THEME_CONFIG.key, isLight ? 'light' : 'dark');
         });
     }
 
-    // --- 2. Sticky Resume Button Scroll Logic ---
-    const stickyBtn = document.getElementById('sticky-resume');
+    function updateThemeIcon(isLight) {
+        if (!toggleIcon) return;
+        if (isLight) {
+            toggleIcon.classList.replace(THEME_CONFIG.iconSun, THEME_CONFIG.iconMoon);
+        } else {
+            toggleIcon.classList.replace(THEME_CONFIG.iconMoon, THEME_CONFIG.iconSun);
+        }
+    }
 
-    if (stickyBtn) {
-        // --- Scroll Reveal Animation ---
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px" // Trigger slightly before element is fully in view
-        };
+    // --- 2. Scroll Animations (IntersectionObserver) ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-scroll');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, { threshold: ANIMATION_CONFIG.threshold, rootMargin: ANIMATION_CONFIG.rootMargin });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show-scroll');
-                    observer.unobserve(entry.target); // Only animate once
-                }
+    // Select and Observe elements
+    const animatedElements = document.querySelectorAll(ANIMATION_CONFIG.selectors.join(', '));
+    animatedElements.forEach((el) => {
+        el.classList.add('hidden-scroll');
+        observer.observe(el);
+    });
+
+    // --- 3. Unified Scroll Event Handler ---
+    const stickyResumeBtn = document.getElementById('sticky-resume');
+    const header = document.querySelector('header');
+    let lastScrollY = 0;
+
+    // Throttled Scroll Handler
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                isScrolling = false;
             });
-        }, observerOptions);
+            isScrolling = true;
+        }
+    });
 
-        // Select elements to animate
-        // We target cards, titles, and major text blocks
-        const animatedElements = document.querySelectorAll('.project-card, .skill-item, .section-title, .hero-content, .timeline-item, .blog-card, .contact-info-card, .contact-form-card, .achievement-hero-card, .project-detail-grid > div');
+    function handleScroll() {
+        const scrollY = window.scrollY;
 
-        animatedElements.forEach((el, index) => {
-            el.classList.add('hidden-scroll');
-            // Optional: Stagger delay for grids (simple implementation)
-            // if (el.classList.contains('skill-item')) {
-            //     el.style.transitionDelay = `${index % 5 * 100}ms`;
-            // }
-            observer.observe(el);
-        });
-
-        // --- Previous Logic ---
-        window.addEventListener('scroll', () => {
-            // Show button after scrolling down 300px
-            if (window.scrollY > 300) {
-                stickyBtn.classList.add('visible');
+        // Sticky Navbar Effect
+        if (header) {
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
             } else {
-                stickyBtn.classList.remove('visible');
+                header.classList.remove('scrolled');
             }
-        });
-    }
-
-    // --- 4. Typewriter Effect (Hero Section) ---
-    const typeWriterElement = document.getElementById('typewriter-text');
-    if (typeWriterElement) {
-        const texts = ["Java Systems.", "Web Apps.", "Secure APIs.", "Cloud Solutions."];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 100;
-
-        function type() {
-            const currentText = texts[textIndex];
-
-            if (isDeleting) {
-                typeWriterElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 50; // Faster deletion
-            } else {
-                typeWriterElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 100; // Normal typing
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = true;
-                typeSpeed = 2000; // Pause at end
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typeSpeed = 500; // Pause before new word
-            }
-
-            setTimeout(type, typeSpeed);
         }
 
-        // Start typing loop
-        setTimeout(type, 1000);
+        // Sticky Resume Button Visibility
+        if (stickyResumeBtn) {
+            if (scrollY > 300) {
+                stickyResumeBtn.classList.add('visible');
+            } else {
+                stickyResumeBtn.classList.remove('visible');
+            }
+        }
+
+        lastScrollY = scrollY;
     }
 
-    // --- 3. Mobile Menu Toggle ---
+    // --- 4. Mobile Menu Logic ---
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -133,7 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = mobileBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
+            const isOpen = navLinks.classList.contains('active');
+
+            // Icon Flip
+            if (isOpen) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -143,27 +142,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scroll Polyfill for all Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // --- 5. Smooth Scroll Polyfill (Delegated) ---
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
             e.preventDefault();
-            navLinks.classList.remove('active'); // Close menu on click
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
 
-    // --- Sticky Navbar Effect ---
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+            // Close mobile menu if open
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+
+            const targetId = anchor.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     });
+
+    // --- 6. Typewriter Effect (Performance Optimized) ---
+    const typeWriterElement = document.getElementById('typewriter-text');
+
+    if (typeWriterElement) {
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            // Performance: Skip typing if tab is hidden
+            if (document.hidden) {
+                setTimeout(type, 500); // Check again later
+                return;
+            }
+
+            const currentText = TYPEWRITER_TEXTS[textIndex];
+
+            if (isDeleting) {
+                typeWriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                typeWriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typeSpeed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % TYPEWRITER_TEXTS.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        setTimeout(type, 1000);
+    }
 });
