@@ -1347,3 +1347,72 @@ body.light-theme .marquee-item {
 body.light-theme .marquee-item:hover {
   color: var(--text-main);
 }
+
+/* --- PREMIUM SKILLS GRID (Replaces Marquee) --- */
+.premium-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  /* Constrain width */
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px 15px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Icon Styling */
+.skill-card i {
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+/* Text Styling */
+.skill-card span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.skill-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(99, 102, 241, 0.2);
+}
+
+.skill-card:hover i {
+  color: var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+.skill-card:hover span {
+  color: white;
+}
+
+/* Light Mode Overrides */
+body.light-theme .skill-card {
+  background: white;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .skill-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}
