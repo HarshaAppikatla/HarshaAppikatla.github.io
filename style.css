@@ -909,3 +909,49 @@ body.light-theme .achievement-hero-card .pill-cgpa {
 body.light-theme .nav-links a.active {
   color: var(--accent-primary) !important;
 }
+/* --- INTERACTIVE ANIMATIONS (Point 5 Fix) --- */
+
+/* Scroll Reveal Base State */
+.hidden-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth bounce */
+}
+
+/* Scroll Reveal Visible State */
+.show-scroll {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for grid items (optional JS injection, or simple CSS) */
+
+/* Nav Link Sliding Underline */
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Footer Polish */
+.footer {
+    background: linear-gradient(to bottom, var(--bg-card), var(--bg-dark));
+    margin-top: 50px;
+    padding: 40px 0;
+}
+

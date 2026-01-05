@@ -48,6 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickyBtn = document.getElementById('sticky-resume');
 
     if (stickyBtn) {
+        // --- Scroll Reveal Animation ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px" // Trigger slightly before element is fully in view
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-scroll');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        // Select elements to animate
+        // We target cards, titles, and major text blocks
+        const animatedElements = document.querySelectorAll('.project-card, .skill-item, .section-title, .hero-content, .timeline-item, .blog-card, .contact-info-card, .contact-form-card, .achievement-hero-card');
+
+        animatedElements.forEach((el, index) => {
+            el.classList.add('hidden-scroll');
+            // Optional: Stagger delay for grids (simple implementation)
+            // if (el.classList.contains('skill-item')) {
+            //     el.style.transitionDelay = `${index % 5 * 100}ms`;
+            // }
+            observer.observe(el);
+        });
+
+        // --- Previous Logic ---
         window.addEventListener('scroll', () => {
             // Show button after scrolling down 300px
             if (window.scrollY > 300) {
@@ -61,3 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Mobile Menu Toggle (Optional Future Proofing) ---
     // If we add a hamburger menu later, logic goes here.
 });
+```
