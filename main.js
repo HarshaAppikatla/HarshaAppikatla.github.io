@@ -241,3 +241,37 @@ function handleScrollUpdates(header, stickyResumeBtn) {
         }
     }
 }
+
+/**
+ * Initialize Contact Form Enhancements
+ * Adds loading state and validation
+ */
+function initContactForm() {
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            // Show loading state
+            const btn = contactForm.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.dataset.originalText = btn.innerHTML; // Save original text
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Sending...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'not-allowed';
+            }
+        });
+
+        // Restore button state if page is restored from bfcache
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                const btn = contactForm.querySelector('button[type="submit"]');
+                if (btn && btn.dataset.originalText) {
+                    btn.innerHTML = btn.dataset.originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                }
+            }
+        });
+    }
+}
