@@ -1172,3 +1172,21 @@ body.light-theme .case-study-flow {
     }
 }
 
+
+/* STICKY NAVBAR SCROLL EFFECT */
+header {
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(10, 10, 10, 0.95); /* Darker on scroll */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    padding: 10px 0; /* Slight shrink for visual feedback */
+    backdrop-filter: blur(15px);
+}
+
+body.light-theme header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
