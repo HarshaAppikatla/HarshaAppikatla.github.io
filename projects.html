@@ -120,6 +120,24 @@
                             <span class="impact-badge">🔐 Secure RBAC Implementation</span>
                         </div>
 
+                        <!-- Your Role Block -->
+                        <div
+                            style="margin-bottom: 25px; padding: 15px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid #3b82f6; border-radius: 4px;">
+                            <h4 style="color: var(--text-main); margin-bottom: 10px; font-size: 1rem;">👨‍💻 Your Role
+                            </h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                                <li style="margin-bottom: 5px;">• Designed and developed backend services using Spring
+                                    Boot.</li>
+                                <li style="margin-bottom: 5px;">• Implemented JWT-based authentication and role-based
+                                    access control.</li>
+                                <li style="margin-bottom: 5px;">• Designed MySQL schema for users, courses, enrollments,
+                                    and activity logs.</li>
+                                <li>• Built asynchronous event tracking to capture student activity without performance
+                                    impact.</li>
+                            </ul>
+                        </div>
+
                         <!-- Case Study Flow -->
                         <div class="case-study-flow">
                             <div class="case-item">
@@ -135,7 +153,8 @@
                             <div class="case-item">
                                 <span class="case-icon">✅</span>
                                 <div><span class="case-label">Outcome:</span><span class="case-text">Enabled real-time
-                                        analytics for 100% of user actions.</span></div>
+                                        analytics for 100% of user actions. Improved instructor visibility and scaled
+                                        without latency.</span></div>
                             </div>
                         </div>
 
@@ -148,14 +167,38 @@
                         </ul>
 
                         <div style="margin-top: 30px;">
-                            <span class="btn btn-outline" style="cursor: default; opacity: 0.8; font-size: 0.9rem;"><i
+                            <span class="btn btn-outline"
+                                style="cursor: default; opacity: 0.8; font-size: 0.9rem; margin-right: 15px;"><i
                                     class="fas fa-code-branch"></i> In Development</span>
+                            <!-- CTA -->
+                        </div>
+
+                        <!-- Planned Enhancements -->
+                        <div style="margin-top: 20px;">
+                            <h4 style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 10px;">🚀 Planned
+                                Enhancements</h4>
+                            <ul
+                                style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; padding-left: 15px;">
+                                <li>Instructor analytics dashboards with engagement trends.</li>
+                                <li>Real-time updates using WebSockets.</li>
+                                <li>Caching frequently accessed data using Redis.</li>
+                            </ul>
                         </div>
                     </div>
                     <div>
                         <div style="padding-left: 20px;">
+                            <!-- Architecture Overview -->
+                            <h3 style="margin-bottom: 15px;">Architecture Overview</h3>
+                            <ul
+                                style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; padding-left: 15px;">
+                                <li>REST-based backend using Spring Boot with layered architecture.</li>
+                                <li>Stateless authentication using JWT for secure API access.</li>
+                                <li>Asynchronous event handling for user activity tracking.</li>
+                                <li>Designed to be extensible into microservices.</li>
+                            </ul>
+
                             <h3 style="margin-bottom: 20px;">Tech Stack</h3>
-                            <div class="tech-stack-list">
+                            <div class="tech-stack-list" style="margin-bottom: 30px;">
                                 <span class="tag">Java Spring Boot</span>
                                 <span class="tag">React.js</span>
                                 <span class="tag">MySQL</span>
@@ -163,12 +206,21 @@
                                 <span class="tag">REST API</span>
                             </div>
 
-                            <h3 style="margin-bottom: 20px; margin-top: 30px;">Technical Challenges</h3>
-                            <p style="color: var(--text-muted); font-size: 0.9rem;">
-                                Implementing a custom robust monitoring system to track user actions without affecting
-                                application performance was a key architectural challenge solved using asynchronous
-                                event handling.
-                            </p>
+                            <!-- Core API Responsibilities -->
+                            <h3 style="margin-bottom: 15px;">Core API Responsibilities</h3>
+                            <ul
+                                style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; padding-left: 15px;">
+                                <li>User authentication & authorization endpoints.</li>
+                                <li>Course and enrollment management APIs.</li>
+                                <li>Activity tracking services for user interactions.</li>
+                            </ul>
+
+                            <h3 style="margin-bottom: 15px;">Performance & Scalability</h3>
+                            <ul
+                                style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.6; padding-left: 15px;">
+                                <li>Used <strong>asynchronous processing</strong> to avoid blocking user requests.</li>
+                                <li>Designed normalized database schema to handle large volumes of log data.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
