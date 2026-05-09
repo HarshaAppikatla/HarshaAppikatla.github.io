@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTiltEffect();
     initPageTransitions();
     initParticles();
+    initCustomCursor();
 });
 
 /**
@@ -415,4 +416,62 @@ function initParticles() {
     window.addEventListener('resize', init);
     init();
     animate();
+}
+
+/**
+ * Initializes Custom Interactive Cursor
+ */
+function initCustomCursor() {
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    if (!cursorDot || !cursorOutline) return;
+
+    // Detect touch devices to disable custom cursor
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+        return;
+    }
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Immediate update for the dot
+        cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    // Smooth following for the outline
+    function animateCursor() {
+        let distX = mouseX - outlineX;
+        let distY = mouseY - outlineY;
+
+        outlineX += distX * 0.2; // Easing factor
+        outlineY += distY * 0.2;
+
+        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+
+    // Add hover states
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .blog-card, .theme-toggle');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorDot.classList.add('hover');
+            cursorOutline.classList.add('hover');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            cursorDot.classList.remove('hover');
+            cursorOutline.classList.remove('hover');
+        });
+    });
 }
