@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGlobalScrollHandler();
     initContactForm();
     initTiltEffect();
+    initPageTransitions();
 });
 
 /**
@@ -290,4 +291,43 @@ function initTiltEffect() {
             scale: 1.02
         });
     }
+}
+
+/**
+ * Initializes Smooth Page Transitions
+ */
+function initPageTransitions() {
+    // Add fade-in to the main wrapper on load
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+        mainContent.classList.add('page-transition');
+    }
+
+    // Intercept internal links for fade-out
+    const internalLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([download])');
+
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if it's pointing to the same page or external domain
+            const targetUrl = this.href;
+            const currentUrl = window.location.href.split('#')[0];
+
+            if (targetUrl === currentUrl || !targetUrl.startsWith(window.location.origin)) {
+                return;
+            }
+
+            e.preventDefault();
+
+            if (mainContent) {
+                mainContent.classList.remove('page-transition');
+                mainContent.classList.add('page-transition-exit');
+
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400); // Matches CSS fadeOut duration
+            } else {
+                window.location.href = targetUrl;
+            }
+        });
+    });
 }
