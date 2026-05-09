@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypewriter();
     initGlobalScrollHandler();
     initContactForm();
+    initTiltEffect();
 });
 
 /**
@@ -272,6 +273,21 @@ function initContactForm() {
                     btn.style.cursor = 'pointer';
                 }
             }
+        });
+    }
+}
+
+/**
+ * Initializes VanillaTilt for 3D card effects
+ */
+function initTiltEffect() {
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".skill-card, .project-card, .blog-card, .timeline-content, .achievement-hero-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.02
         });
     }
 }

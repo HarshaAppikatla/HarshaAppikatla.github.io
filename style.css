@@ -215,7 +215,6 @@ nav {
 
 .skill-item:hover {
   border-color: var(--accent-primary);
-  transform: translateY(-5px);
 }
 
 /* Projects */
@@ -238,7 +237,6 @@ nav {
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border-color: rgba(99, 102, 241, 0.3);
 }
@@ -447,7 +445,6 @@ nav {
 
 .timeline-content:hover {
   border-color: var(--accent-primary);
-  transform: translateY(-5px);
 }
 
 .timeline-date {
@@ -530,7 +527,6 @@ nav {
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
   border-color: rgba(99, 102, 241, 0.3);
 }
 
@@ -1390,7 +1386,6 @@ body.light-theme .marquee-item:hover {
 
 /* Hover Effects */
 .skill-card:hover {
-  transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.07);
   border-color: var(--accent-primary);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(99, 102, 241, 0.2);
