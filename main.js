@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypewriter();
     initGlobalScrollHandler();
     initContactForm();
+    initTiltEffect();
+    initPageTransitions();
+    initParticles();
+    initCustomCursor();
 });
 
 /**
@@ -274,4 +278,200 @@ function initContactForm() {
             }
         });
     }
+}
+
+/**
+ * Initializes VanillaTilt for 3D card effects
+ */
+function initTiltEffect() {
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".skill-card, .project-card, .blog-card, .timeline-content, .achievement-hero-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.02
+        });
+    }
+}
+
+/**
+ * Initializes Smooth Page Transitions
+ */
+function initPageTransitions() {
+    // Add fade-in to the main wrapper on load
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+        mainContent.classList.add('page-transition');
+    }
+
+    // Intercept internal links for fade-out
+    const internalLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([download])');
+
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if it's pointing to the same page or external domain
+            const targetUrl = this.href;
+            const currentUrl = window.location.href.split('#')[0];
+
+            if (targetUrl === currentUrl || !targetUrl.startsWith(window.location.origin)) {
+                return;
+            }
+
+            e.preventDefault();
+
+            if (mainContent) {
+                mainContent.classList.remove('page-transition');
+                mainContent.classList.add('page-transition-exit');
+
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400); // Matches CSS fadeOut duration
+            } else {
+                window.location.href = targetUrl;
+            }
+        });
+    });
+}
+
+/**
+ * Initializes Interactive Hero Particle Background
+ */
+function initParticles() {
+    const canvas = document.getElementById('hero-particles');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resize() {
+        width = window.innerWidth;
+        height = document.querySelector('.hero').offsetHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 1 - 0.5;
+            this.opacity = Math.random() * 0.5 + 0.1;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x > width || this.x < 0) this.speedX *= -1;
+            if (this.y > height || this.y < 0) this.speedY *= -1;
+        }
+
+        draw() {
+            ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function init() {
+        resize();
+        particles = [];
+        const particleCount = Math.min(Math.floor(width / 15), 100); // Responsive particle count
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Only draw lines if particles are close
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+
+            for (let j = i; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 - distance / 1000})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    init();
+    animate();
+}
+
+/**
+ * Initializes Custom Interactive Cursor
+ */
+function initCustomCursor() {
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    if (!cursorDot || !cursorOutline) return;
+
+    // Detect touch devices to disable custom cursor
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+        return;
+    }
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Immediate update for the dot
+        cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    // Smooth following for the outline
+    function animateCursor() {
+        let distX = mouseX - outlineX;
+        let distY = mouseY - outlineY;
+
+        outlineX += distX * 0.2; // Easing factor
+        outlineY += distY * 0.2;
+
+        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+
+    // Add hover states
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .blog-card, .theme-toggle');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorDot.classList.add('hover');
+            cursorOutline.classList.add('hover');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            cursorDot.classList.remove('hover');
+            cursorOutline.classList.remove('hover');
+        });
+    });
 }
